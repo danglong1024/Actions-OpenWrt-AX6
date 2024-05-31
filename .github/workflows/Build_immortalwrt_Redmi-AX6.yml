@@ -180,25 +180,23 @@ jobs:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: Create release
-      id: release
-      uses: ncipollo/release-action@main
+    - name: Generate release tag
+      id: tag
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      run: |
+        echo "release_tag=AX6-immortalwrt-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        touch release.txt
+        echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Upload firmware to release
+      uses: softprops/action-gh-release@v1
+      if: steps.tag.outputs.status == 'success' && !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ env.DATE }} OpenWrt for ${{ env.PRODUCT_NAME }}
-        allowUpdates: true
-        tag: ${{ env.DATE2 }}_${{ env.FILE_NAME }}
-        commit: main
-        token: ${{ secrets.RELEASES_TOKEN }}
-        body: |
-         #### Redmi-AX6（合并分区） immortalwrt-Openwrt 固件配置：
-            - IP:192.168.123.1
-            - WEB登陆账户：root
-            - 密码：password
-            - 固件源码：https://github.com/immortalwrt/immortalwrt
-            - 固件内核版本：5.15
-         #### 源码最近提交信息:
-            - ${{ env.useVersionInfo }}
-        artifacts: ${{ env.FIRMWARE }}/*
+        tag_name: ${{ steps.tag.outputs.release_tag }}
+        body_path: release.txt
+        files: ${{ env.FIRMWARE }}/*
 
     - name: Delete older workflow runs and artifacts
       uses: Mattraks/delete-workflow-runs@main
