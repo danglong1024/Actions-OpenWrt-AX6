@@ -15,6 +15,7 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-echo 'src-git fichenx https://github.com/fichenx/openwrt-package' >>feeds.conf.default
-git clone https://github.com/bootli/luci-app-v2ray-server.git package/v2ray
-git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
+#echo 'src-git fichenx https://github.com/fichenx/openwrt-package' >>feeds.conf.default
+#git clone https://github.com/bootli/luci-app-v2ray-server.git package/v2ray
+#git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
+echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
