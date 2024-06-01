@@ -31,7 +31,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 #2. web登陆密码从password修改为空
 #sed -i 's/V4UetPzk$CYXluq4wUazHjmCDBCqXF./cEuy4sGe$z49lYVt0VI05HMaYKsAvP1/g' package/lean/default-settings/files/zzz-default-settings
 # 修改连接数
-sed -i 's/customize sysctl settings/net.netfilter.nf_conntrack_max=65535/g' package/base-files/files/etc/sysctl.d/10-default.conf
+#sed -i 's/customize sysctl settings/a net.netfilter.nf_conntrack_max=65535/g' package/base-files/files/etc/sysctl.d/10-default.conf
 # 修正连接数（by ベ七秒鱼ベ）
 sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
 
