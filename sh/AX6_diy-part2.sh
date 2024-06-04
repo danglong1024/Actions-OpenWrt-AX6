@@ -32,11 +32,11 @@ sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package
 # 设置密码为password
 sed -i 's/root:::0:99999:7:::/root:$1$iT2B9mTF$d5CTSuJLXZZzSPQYHqwqG.:19867:0:99999:7:::/' package/base-files/files/etc/shadow
 # 修改默认wifi名称ssid为🐥🐥
-sed -i 's/ssid=OpenWrt/ssid=🐥🐥/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -i 's/ssid=ImmortalWrt/ssid=🐥🐥/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 修改默认wifi密码key为abc@abcD
-sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\set wireless.default_radio${devidx}.key=abc@abcD' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\set wireless.default_radio${devidx}.key=abc@abcD' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # hijack dns queries to router(firewall)
 sed -i '/REDIRECT --to-ports 53/d' package/network/config/firewall/files/firewall.user
