@@ -19,4 +19,4 @@
 #git clone https://github.com/bootli/luci-app-v2ray-server.git package/v2ray
 #git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
 #echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
-echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
+#echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
