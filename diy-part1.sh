@@ -84,6 +84,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages shadowsocks-
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-usb-printer
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages shadowsocksr-libev
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-v2ray-server
 
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
