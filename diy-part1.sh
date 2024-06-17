@@ -24,10 +24,10 @@
 rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/aria2
 rm -rf feeds/packages/net/ariang
-rm -rf feeds/packages/net/mosdns
+#rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
 rm -rf feeds/packages/net/smartdns
-rm -rf feeds/luci/applications/luci-app-mosdns
+#rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-msd_lite
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
@@ -71,7 +71,7 @@ git_sparse_clone master https://github.com/rmoyulong/AX6-Actions_Lede pcre
 #git_sparse_clone main https://github.com/kenzok8/small-package ariang
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-zerotier
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages v2dat
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-mosdns
+#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-mosdns
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-ssr-plus
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages shadow-tls
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages lua-neturl
