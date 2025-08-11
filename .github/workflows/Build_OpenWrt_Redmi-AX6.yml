@@ -89,6 +89,11 @@ jobs:
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        # 赋予openwrt目录及子目录读写权限，解决权限问题
+        chmod -R 777 openwrt
+        # 确保package目录存在且有权限
+        mkdir -p openwrt/package
+        chmod 777 openwrt/package
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
